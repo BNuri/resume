@@ -1,0 +1,54 @@
+@import "reset.css";
+@import "header.css";
+@import "container.css";
+
+:root {
+  --main-grey-color: #e9ecf3;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  margin-top: 100px;
+  color: #4a4a4a;
+  transition: all 0.2s linear;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff !important;
+  opacity: 70%;
+  --main-grey-color: #3c4042;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+main {
+  padding: 30px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:hover i {
+  background: -webkit-linear-gradient(left, #c0392b, #8e44ad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+i {
+  line-height: normal !important;
+}

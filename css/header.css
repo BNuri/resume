@@ -1,0 +1,31 @@
+.header {
+  height: 100px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: -webkit-linear-gradient(
+    var(--main-grey-color) 20%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.header__column,
+.header__column-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header__column-item {
+  padding-bottom: 10px;
+}
+
+.header__column-item i {
+  padding: 0px 10px;
+}
