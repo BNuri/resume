@@ -25,6 +25,7 @@
   .container__project {
     flex-direction: column;
     align-items: start !important;
+    padding: 20px 0px !important;
   }
   .container__project-title,
   .container__project-content {
