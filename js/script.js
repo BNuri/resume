@@ -1,55 +1,60 @@
-const createElement = (el, className, text = "") => {
-  const Element = document.createElement(el);
-  Element.className = className;
-  Element.innerText = text;
-  return Element;
+"use strict";
+
+var createElement = function createElement(el, className) {
+  var text =
+    arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+
+  var element = document.createElement(el);
+  element.className = className;
+  element.innerText = text;
+  return element;
 };
 
-createAWithIcon = (item, iconName) => {
-  const link = createElement("a", "");
+var createAWithIcon = function createAWithIcon(item, iconName) {
+  var link = createElement("a", "");
   link.href = item;
-  const icon = createElement("i", iconName);
+  var icon = createElement("i", iconName);
   link.appendChild(icon);
   return link;
 };
 
-const createContainerElement = (project) => {
-  const container = createElement("li", "container__project");
-  const titleContainer = createElement("div", "container__project-title");
-  const title = createElement("h4", "container__subtitle", project.title);
+var createContainerElement = function createContainerElement(project) {
+  var container = createElement("li", "container__project");
+  var titleContainer = createElement("div", "container__project-title");
+  var title = createElement("h4", "container__subtitle", project.title);
   titleContainer.appendChild(title);
   if (project.siteLink) {
-    const siteLink = createAWithIcon(project.siteLink, "fas fa-globe");
+    var siteLink = createAWithIcon(project.siteLink, "fas fa-globe");
     titleContainer.appendChild(siteLink);
   }
   if (project.gitHubLink) {
-    const gitHubLink = createAWithIcon(project.gitHubLink, "fab fa-github");
+    var gitHubLink = createAWithIcon(project.gitHubLink, "fab fa-github");
     titleContainer.appendChild(gitHubLink);
   }
   if (project.period) {
-    const period = createElement("h5", "container__subtitle-s", project.period);
+    var period = createElement("h5", "container__subtitle-s", project.period);
     titleContainer.appendChild(period);
   }
   if (project.publisher) {
-    const publisher = createElement(
+    var publisher = createElement(
       "h5",
       "container__subtitle-s",
       project.publisher
     );
     titleContainer.appendChild(publisher);
   }
-  const contentContainer = createElement("div", "container__project-content");
-  const descriptionContainer = createElement("ul", "container__project-desc");
+  var contentContainer = createElement("div", "container__project-content");
+  var descriptionContainer = createElement("ul", "container__project-desc");
   if (project.description && project.description.length > 0) {
-    project.description.forEach((desc) => {
-      const description = createElement("li", "", desc);
+    project.description.forEach(function (desc) {
+      var description = createElement("li", "", desc);
       descriptionContainer.appendChild(description);
     });
   }
-  const stackContainer = createElement("ul", "container__project-stack");
+  var stackContainer = createElement("ul", "container__project-stack");
   if (project.stack && project.stack.length > 0) {
-    project.stack.forEach((stk) => {
-      const stack = createElement("li", "stack", stk);
+    project.stack.forEach(function (stk) {
+      var stack = createElement("li", "stack", stk);
       stackContainer.appendChild(stack);
     });
   }
@@ -58,12 +63,12 @@ const createContainerElement = (project) => {
   return container;
 };
 
-const createListComponent = (item, id) => {
-  const container = document.getElementById(id);
+var createListComponent = function createListComponent(item, id) {
+  var container = document.getElementById(id);
   if (item.length > 0) {
-    const itemUl = document.createElement("ul");
-    item.forEach((project) => {
-      const itemLi = createContainerElement(project);
+    var itemUl = document.createElement("ul");
+    item.forEach(function (project) {
+      var itemLi = createContainerElement(project);
       itemUl.appendChild(itemLi);
     });
     container.appendChild(itemUl);
@@ -74,9 +79,9 @@ createListComponent(certificates, "certificate");
 createListComponent(educations, "education");
 createListComponent(toyprojects, "toyproject");
 
-const darkToggle = () => {
-  const body = document.body;
-  const toggleBtn = document.getElementById("darkToggle");
+var darkToggle = function darkToggle() {
+  var body = document.body;
+  var toggleBtn = document.getElementById("darkToggle");
   body.classList.toggle("dark-mode");
   toggleBtn.className = body.className.includes("dark-mode")
     ? "fas fa-sun fa-lg"
