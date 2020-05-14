@@ -17,9 +17,7 @@
     var(--main-grey-color) 20%,
     rgba(0, 0, 0, 0)
   );
-
   background: -o-linear-gradient(var(--main-grey-color) 20%, rgba(0, 0, 0, 0));
-
   background: linear-gradient(var(--main-grey-color) 20%, rgba(0, 0, 0, 0));
 }
 

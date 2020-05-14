@@ -18,6 +18,7 @@ body {
 .dark-mode {
   background-color: #121212;
   opacity: 70%;
+  color: #ffffff !important;
   --main-grey-color: #3c4042;
   --main-text-color: #ffffff;
   --main-purple-color: #bb86fc;
