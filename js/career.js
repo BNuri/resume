@@ -8,8 +8,14 @@ if (careers.length > 0) {
     var header = document.createElement("header");
     var company = createElement("h3", "container__title-s", career.company);
     var period = createElement("h5", "container__subtitle-s", career.period);
-    var subtitle = createElement("h4", "container__subtitle", "[진행 프로젝트]");
-    header.append(company, period, subtitle);
+    var subtitle = createElement(
+      "h4",
+      "container__subtitle",
+      "[진행 프로젝트]"
+    );
+    header.appendChild(company);
+    header.appendChild(period);
+    header.appendChild(subtitle);
     container.appendChild(header);
     var projectsUl = document.createElement("ul");
     career.projects.forEach(function (project) {

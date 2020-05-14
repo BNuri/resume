@@ -4,20 +4,23 @@
 
 :root {
   --main-grey-color: #e9ecf3;
+  --main-purple-color: #ffffff;
+  --main-text-color: #4a4a4a;
 }
 
 body {
   font-family: "Nanum Gothic", sans-serif;
   margin-top: 100px;
-  color: #4a4a4a;
+  color: var(--main-text-color);
   transition: all 0.2s linear;
 }
 
 .dark-mode {
   background-color: #121212;
-  color: #ffffff !important;
   opacity: 70%;
   --main-grey-color: #3c4042;
+  --main-text-color: #ffffff;
+  --main-purple-color: #bb86fc;
 }
 
 * {
@@ -44,8 +47,14 @@ a {
 
 a:hover,
 a:hover i {
+  background: var(--main-purple-color);
   background: -webkit-linear-gradient(left, #c0392b, #8e44ad);
+  background: -moz-linear-gradient(left, #c0392b, #8e44ad);
+  background: -o-linear-gradient(left, #c0392b, #8e44ad);
+  background: linear-gradient(left, #c0392b, #8e44ad);
+  background-clip: text;
   -webkit-background-clip: text;
+  color: tranparent;
   -webkit-text-fill-color: transparent;
 }
 
