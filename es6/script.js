@@ -53,8 +53,10 @@ const createContainerElement = (project) => {
       stackContainer.appendChild(stack);
     });
   }
-  contentContainer.append(descriptionContainer, stackContainer);
-  container.append(titleContainer, contentContainer);
+  contentContainer.appendChild(descriptionContainer);
+  contentContainer.appendChild(stackContainer);
+  container.appendChild(titleContainer);
+  container.appendChild(contentContainer);
   return container;
 };
 

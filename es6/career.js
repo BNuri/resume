@@ -11,7 +11,10 @@ if (careers.length > 0) {
       "container__subtitle",
       "[진행 프로젝트]"
     );
-    header.append(company, period, subtitle);
+    header.appendChild(company);
+    header.appendChild(period);
+    header.appendChild(subtitle);
+
     container.appendChild(header);
     const projectsUl = document.createElement("ul");
     career.projects.forEach((project) => {
