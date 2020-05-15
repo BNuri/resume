@@ -73,12 +73,3 @@ const createListComponent = (item, id) => {
 createListComponent(certificates, "certificate");
 createListComponent(educations, "education");
 createListComponent(toyprojects, "toyproject");
-
-const darkToggle = () => {
-  const body = document.body;
-  const toggleBtn = document.getElementById("darkToggle");
-  body.classList.toggle("dark-mode");
-  toggleBtn.className = body.className.includes("dark-mode")
-    ? "fas fa-sun fa-lg"
-    : "fas fa-moon fa-lg";
-};

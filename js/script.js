@@ -1,8 +1,7 @@
 "use strict";
 
 var createElement = function createElement(el, className) {
-  var text =
-    arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+  var text = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
 
   var element = document.createElement(el);
   element.className = className;
@@ -36,11 +35,7 @@ var createContainerElement = function createContainerElement(project) {
     titleContainer.appendChild(period);
   }
   if (project.publisher) {
-    var publisher = createElement(
-      "h5",
-      "container__subtitle-s",
-      project.publisher
-    );
+    var publisher = createElement("h5", "container__subtitle-s", project.publisher);
     titleContainer.appendChild(publisher);
   }
   var contentContainer = createElement("div", "container__project-content");
@@ -58,10 +53,8 @@ var createContainerElement = function createContainerElement(project) {
       stackContainer.appendChild(stack);
     });
   }
-  contentContainer.appendChild(descriptionContainer);
-  contentContainer.appendChild(stackContainer);
-  container.appendChild(titleContainer);
-  container.appendChild(contentContainer);
+  contentContainer.append(descriptionContainer, stackContainer);
+  container.append(titleContainer, contentContainer);
   return container;
 };
 
@@ -80,13 +73,3 @@ var createListComponent = function createListComponent(item, id) {
 createListComponent(certificates, "certificate");
 createListComponent(educations, "education");
 createListComponent(toyprojects, "toyproject");
-
-var darkToggle = function darkToggle() {
-  var body = document.body;
-  var toggleBtn = document.getElementById("darkToggle");
-  body.classList.toggle("dark-mode");
-  toggleBtn.className = body.className.includes("dark-mode")
-    ? "fas fa-sun fa-lg"
-    : "fas fa-moon fa-lg";
-  return false;
-};
