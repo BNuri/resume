@@ -1,6 +1,7 @@
 "use strict";
 
 var darkToggle = function darkToggle(event) {
+  event.preventDefault();
   var body = document.body;
   var toggleBtn = event.target;
   body.classList.toggle("dark-mode");

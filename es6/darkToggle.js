@@ -1,4 +1,5 @@
 const darkToggle = (event) => {
+  event.preventDefault();
   const body = document.body;
   const toggleBtn = event.target;
   body.classList.toggle("dark-mode");
