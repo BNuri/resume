@@ -97,6 +97,10 @@
   font-size: 12px;
 }
 
+.dark-mode .container__project-stack li {
+  background-color: var(--dark-grey-color);
+}
+
 .container__project-stack li {
   padding: 3px 7px;
   border-radius: 5px;

@@ -1,3 +1,16 @@
+.dark-mode .header {
+  background: -webkit-linear-gradient(
+    var(--dark-grey-color) 20%,
+    rgba(0, 0, 0, 0)
+  );
+  background: -moz-linear-gradient(
+    var(--dark-grey-color) 20%,
+    rgba(0, 0, 0, 0)
+  );
+  background: -o-linear-gradient(var(--dark-grey-color) 20%, rgba(0, 0, 0, 0));
+  background: linear-gradient(var(--dark-grey-color) 20%, rgba(0, 0, 0, 0));
+}
+
 .header {
   height: 100px;
   width: 100%;
